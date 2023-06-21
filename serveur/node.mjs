@@ -1,11 +1,16 @@
 import fetch from 'node-fetch'; 
 import http from 'http';
+import { requete } from './requete.mjs';
 const host = 'localhost';
 const port = 8000;
 
-
   const requestListener = function (req, res) {
-    console.log(req)
+    if(req.url === "/accueil"){
+      console.log("Bienvenue sur l'accueil")
+      requete()
+      
+    }
+  
     res.writeHead(200);
     fetch('https://www.affirmations.dev/')
     .then(response => {
