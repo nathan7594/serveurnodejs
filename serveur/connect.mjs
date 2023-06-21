@@ -19,5 +19,5 @@ export function connexion() {
       console.log("Connexion à la base de données MySQL réussie");
     }
   });
-  return connection
+  return connection;
 }
