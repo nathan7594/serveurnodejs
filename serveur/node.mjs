@@ -19,23 +19,29 @@ const server = http.createServer((req, res) => {
     res.end();
   } else if (req.method === "POST" && req.url === "/") {
     let body = "";
-
+  
     req.on("data", (chunk) => {
       body += chunk;
     });
-
+  
     req.on("end", () => {
       const data = JSON.parse(body); // Analyse de la donnée JSON
-
+  
       // Traitez la donnée comme vous le souhaitez
       console.log(data);
       insert(data);
-
+  
       // Répondez à la requête du client
       res.writeHead(200, { "Content-Type": "text/plain" });
       res.end("Donnée reçue avec succès !");
     });
+  } else if (req.method === "GET" && req.url === "/") {
+    // Gérer la requête GET pour la page d'accueil
+    res.writeHead(200, { "Content-Type": "text/json" });
+   
+    res.end(requete());
   } else {
+    // Gérer les autres cas (URL non trouvée, méthode non prise en charge, etc.)
     res.statusCode = 404;
     res.end();
   }
