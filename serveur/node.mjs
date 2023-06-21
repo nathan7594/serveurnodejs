@@ -50,7 +50,6 @@ const server = http.createServer((req, res) => {
 
         res.setHeader('Content-Type', 'application/json');
         res.statusCode = 200;
-        console.log(results)
         res.end(JSON.stringify(results));
       });
     } else {
