@@ -13,6 +13,7 @@ export function connexion(){
         }
         console.log('Connexion à la base de données réussie !');
       });
+      return connection
 }
 
   

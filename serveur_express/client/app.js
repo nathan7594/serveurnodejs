@@ -1,19 +1,31 @@
 function insert() {
-  let inputValue = document.getElementById("myInput").value;
+  const inputValue = document.getElementById("myInput").value;
+  const postData = {
+    value : inputValue}
   fetch("http://localhost:8000/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(inputValue),
+    body: JSON.stringify(postData)
     })
     .catch((error) => {
       console.error("Erreur lors de la requête :", error);
     });
 }
-
-
-
+// function insert(){
+//   const url = "http://localhost:8000/";
+//   let inputValue = document.getElementById("myInput").value;
+//   const postData = {inputValue}
+  
+//   let request = new Request(url, {
+//     method: 'POST',
+//     body: JSON.stringify(postData),
+//     headers: new Headers()
+//   });
+  
+//   fetch(request)
+// }
 
 const received = async () => {
   try {
