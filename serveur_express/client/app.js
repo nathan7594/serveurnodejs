@@ -3,7 +3,7 @@ function insert() {
   const postData = {
     value: inputValue,
   };
-  fetch("http://localhost:8000/post", {
+  fetch("http://localhost:8000/api", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,7 +16,7 @@ function insert() {
 
 const received = async () => {
   try {
-    const response = await fetch("http://localhost:8000/get");
+    const response = await fetch("http://localhost:8000/api");
 
     if (response.ok) {
       const data = await response.json();
