@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <script src="app.js"></script>
-</head>
-<body>
-    <form>
-        <input type="text" id="myInput" placeholder="Entrez du texte">
+  </head>
+  <body>
+    <div class="log">
+      <div class="button-container">
+        <form action="/inscription" method="post">
+          <button class="inscription-button" type="submit">Inscription</button>
+        </form>
+        <button class="connexion-button">Connexion</button>
+      </div>
+    </div>
+    <div>
+      <h1>Motivation</h1>
+      <p>Clique sur le boutton pour avoir une phrase de motivation</p>
+      <button type="button" onclick="received()">Cliquer</button>
+      <div id="texte"></div>
+      <h1>Ma motivation</h1>
+      <form>
+        <p>Rentre une phrase qui te motive</p>
+        <input type="text" id="myInput" placeholder="Entrez du texte" />
         <button type="button" onclick="insert()">Cliquer</button>
       </form>
-      <div>
-        <h1>Salut Express</h1>
-        <p>Clique sur le boutton pour avoir une phrase de motivation</p>
-        <button type="button" onclick="received()">Cliquer</button>
-        <div id="texte"></div>
-      </div>
-</body>
+      <p>Accède a toute les phrase de motivation que tu as fournis</p>
+      <button type="button" onclick="select()">Mes phrase de motivation</button>
+    </div>
+  </body>
 </html>
